@@ -1,0 +1,74 @@
+Team_Project/뷰티인플루언서 영향력/
+전체 사용자 정의 함수
+
+2020 06 14 기준
+
+파일명은 알파벳 오름차순
+┌────┐
+● : file
+○ : class
+ -  : function
+≫ : return
+ex): 예시
+└────┘
+
+----------------
+● API_CLASS.py
+- convert_strtime(str_time)
+≫str형태의 날짜(%Y-%m-%d 형식에 맞추어)를 입력받아
+datetime형태로 전환
+
+- timeminus(date, datys)
+≫date에서 days만큼 더함 ( 음수면 빠짐 )
+
+○ class NaverApi() : 대부분 날짜관련 함수들을 이용한 API처리
+- __init__(self,searchword='기본',startdate=minusdate,enddate=today)
+ex)
+na = NaverApi('달고나','2020-03-05','2020-05-05')
+na.to_excel('네이버트렌드검색량.xlsx')
+≫ 날짜, 비율
+- set_startdate(self,startdate)
+- set_enddate(self,enddate)
+- search(self,searchword)
+- get_data(self)
+- get_keyword(self)
+- get_missingdate(self)
+- get_period(self)
+- get_rate(self)
+- to_dataframe(self)
+- to_excel(self,filepath)
+- to_csv(self,filepath)
+
+● glowpick_dedupl..py
+-
+
+● googletrend.py
+- table_sub(df, sub)
+데이터프레임의 마지막에 구독자수를 추가해줌
+● googletrend.py
+- googletrend(keywords, startdate, enddate)
+구글트렌드를 진행.
+● Kotube.py    ( ? )
+- get_ko_sub(video_url)
+해당 url의 kor자막을 가져옴(몇가지 stopwords 설정되어있음)
+≫ 
+● socialblade2.py
+- socialblade1(url)
+ㄴ convert(time)
+S.B의 구독자추이 차트에 javascript로 구현된 시간을 읽기 위해 유닉스타임으로 변환해줌
+
+ex)
+url = "영상url"
+for i in socialblade1('영상URL'):
+	print(i)
+≫해당 영상 유튜버의 구독자 추이 
+● youtube_url_main.py
+- youtube_url_main(keyword, howmany)
+≫youtube_URL.py의 함수를 실행하는 함수
+● Youtube_URL.py
+- get_url(plusURL, count)
+≫검색 URL에서 count만큼 (?)제목(?)을 가져옴
+- 
+- 
+- 
+- 
